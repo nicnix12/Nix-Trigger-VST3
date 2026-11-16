@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="NixTrigger" name="NixTrigger" projectType="audioplug"
+              version="1.0.0" jucerVersion="7.0.9" companyName="NixAudio"
+              companyWebsite="" companyEmail=""
+              pluginFormats="buildVST3,buildAU,buildStandalone"
+              pluginName="Nix Trigger"
+              pluginDesc="Drum replacement and MIDI trigger plugin"
+              pluginManufacturerCode="NxAu"
+              pluginCode="NxTr"
+              pluginChannelConfigs="{2,2},{1,2}"
+              pluginIsSynth="0"
+              pluginWantsMidiIn="0"
+              pluginProducesMidiOut="1"
+              pluginIsMidiEffectPlugin="0"
+              pluginEditorRequiresKeys="0"
+              pluginVSTNumMidiInputs="0"
+              pluginVSTNumMidiOutputs="1"
+              aaxIdentifier="com.nixaudio.nixtrigger"
+              pluginAAXCategory="AAX_ePlugInCategory_None"
+              bundleIdentifier="com.nixaudio.nixtrigger"
+              buildVST="0"
+              buildVST3="1"
+              buildAU="1"
+              buildAUv3="0"
+              buildAAX="0"
+              buildStandalone="1">
+
+  <MAINGROUP id="NixTrigger" name="NixTrigger">
+
+    <GROUP id="Source" name="Source">
+      <FILE id="proc_h"  name="PluginProcessor.h"   compile="0" resource="0" file="Source/PluginProcessor.h"/>
+      <FILE id="proc_c"  name="PluginProcessor.cpp" compile="1" resource="0" file="Source/PluginProcessor.cpp"/>
+      <FILE id="edit_h"  name="PluginEditor.h"      compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="edit_c"  name="PluginEditor.cpp"    compile="1" resource="0" file="Source/PluginEditor.cpp"/>
+
+      <GROUP id="Core" name="Core">
+        <FILE id="params_h" name="PluginParameters.h" compile="0" resource="0" file="Source/Core/PluginParameters.h"/>
+        <FILE id="common_h" name="TriggersCommon.h"   compile="0" resource="0" file="Source/Core/TriggersCommon.h"/>
+      </GROUP>
+
+      <GROUP id="DSP" name="DSP">
+        <FILE id="detect_h" name="TransientDetector.h" compile="0" resource="0" file="Source/DSP/TransientDetector.h"/>
+      </GROUP>
+
+      <GROUP id="Sampler" name="Sampler">
+        <FILE id="voice_h"  name="SampleVoice.h"       compile="0" resource="0" file="Source/Sampler/SampleVoice.h"/>
+        <FILE id="engine_h" name="DrumSamplerEngine.h" compile="0" resource="0" file="Source/Sampler/DrumSamplerEngine.h"/>
+      </GROUP>
+
+      <GROUP id="UI" name="UI">
+        <FILE id="meter_h" name="TriggerMeterComponent.h" compile="0" resource="0" file="Source/UI/TriggerMeterComponent.h"/>
+        <FILE id="laf_h"   name="NixLookAndFeel.h"        compile="0" resource="0" file="Source/UI/NixLookAndFeel.h"/>
+      </GROUP>
+    </GROUP>
+
+  </MAINGROUP>
+
+  <EXPORTERS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug"   isDebug="1" optimisation="1" targetName="NixTrigger"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="NixTrigger"/>
+      </CONFIGURATIONS>
+    </XCODE_MAC>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug"   isDebug="1" optimisation="1" targetName="NixTrigger" winWarningLevel="4"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="NixTrigger" winWarningLevel="4"/>
+      </CONFIGURATIONS>
+    </VS2022>
+  </EXPORTERS>
+
+  <MODULES>
+    <MODULE id="juce_audio_basics"         showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices"        showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats"        showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_plugin_client"  showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors"     showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils"          showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core"                 showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures"      showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_dsp"                  showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events"               showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics"             showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics"           showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra"            showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+
+</JUCERPROJECT>

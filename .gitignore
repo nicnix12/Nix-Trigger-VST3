@@ -1,0 +1,36 @@
+# ============================================================
+# Nix Trigger — Git Ignore
+# ============================================================
+
+# Build directories & binaries
+build/
+build-*/
+Output-*/
+*.obj
+*.o
+*.lib
+*.a
+*.exp
+*.ilk
+*.pdb
+*.idb
+
+# Intermediate artifacts
+JUCE/
+NixTrigger_artefacts/
+
+# IDE & Editor cache
+.vs/
+*.sln
+*.vcxproj*
+*.user
+.idea/
+.vscode/
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Large dist files (kecuali PDF manual & script installer)
+Dist-Windows/*.vst3
+Dist-Windows/*.exe
+package-mac/
